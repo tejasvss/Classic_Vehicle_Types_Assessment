@@ -1,0 +1,36 @@
+{
+  "name": "Teja-assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "jest --forceExit --detectOpenHandles  --watchAll --maxWorkers=1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.10.2",
+    "apollo-server-express": "^3.10.2",
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "fetch": "^1.1.0",
+    "graphql": "^16.6.0",
+    "graphql-tools": "^8.3.4",
+    "https": "^1.0.0",
+    "mongoose": "^6.5.4",
+    "node-cron": "^3.0.2",
+    "node-fetch": "^3.2.10",
+    "notarealdb": "^0.2.2",
+    "validator": "^13.7.0",
+    "xml-js": "^1.6.11",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "jest": "^29.0.2",
+    "supertest": "^6.2.4"
+  }
+}

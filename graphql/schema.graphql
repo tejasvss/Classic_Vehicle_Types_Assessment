@@ -1,0 +1,13 @@
+type VehicleTypes{
+    VehicleTypeId:[String!]
+    VehicleTypeName:[String!]
+}
+type Makes {
+        makeId:[String!]
+        makeName: [String!]
+        vehicleTypes:[VehicleTypes!]
+}
+
+type Query {
+    getAllVehicleTypes: [Makes]
+}
