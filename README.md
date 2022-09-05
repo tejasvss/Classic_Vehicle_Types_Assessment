@@ -22,6 +22,9 @@ query{
     }
 }
 
+request_method in postman:
+"POST"
+
 Note:
 Initially we designed two cron jobs:
 i)This job is used to fetch all vehicle makeIds and storing in DB with interval of 23 hours.
