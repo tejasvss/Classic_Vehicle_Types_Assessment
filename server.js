@@ -13,11 +13,6 @@ const typeDefs = fs.readFileSync('./graphql/schema.graphql', { encoding: 'utf-8'
 const { resolvers } = require('./graphql/resolvers')
 const server = new ApolloServer({ typeDefs, resolvers });
 
-const opts = {
-    mergeAttrs: true,
-    attrNameProcessors: [str => '@' + str],
-    explicitArray: false
-}
 
 const port = process.env.PORT || 8080;
 const app = express();
