@@ -11,7 +11,7 @@ const opts = {
 
 
 const runMakesFileXmlJobs = () => {
-    cron.schedule('*/5 * * * *', async () => {
+    cron.schedule('* */23 * * *', async () => {
         console.log(' Xml Jobs are started');
         const url = "https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=XML"
         let xmlData = await axios.get(url);

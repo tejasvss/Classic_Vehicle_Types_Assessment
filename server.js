@@ -9,8 +9,8 @@ let Vehicle = require('./models/vehicleTypes.m');
 let AllVehicleMakeIds = require('./models/vehicleMakeIds.m')
 const { ApolloServer, gql } = require('apollo-server-express');
 const fs = require('fs')
-const typeDefs = fs.readFileSync('./graphql/schema.graphql', { encoding: 'utf-8' })
-const { resolvers } = require('./graphql/resolvers')
+const typeDefs = fs.readFileSync('./graphql-apis/schema.graphql', { encoding: 'utf-8' })
+const { resolvers } = require('./graphql-apis/resolvers')
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const port = process.env.PORT || 8080;
@@ -32,6 +32,10 @@ app.get('/test', async (req, res) => {
 })
 
 
+//For Restful-API
+app.use(require('./rest-apis/route'))
+
+
 //For Graphql Server configurations
 server.start().then(() => {
     server.applyMiddleware({
@@ -45,8 +49,6 @@ server.start().then(() => {
 /*
 This cronJobs run with time interval of 23 hours to fetch all vehicleMakeId's from XML and store in DB as JSON format.If u want to test this job just uncomment the below function
 */
-
-
 // require('./cron-jobs/makesDataJobs').runMakesFileXmlJobs();
 
 
@@ -54,9 +56,11 @@ This cronJobs run with time interval of 23 hours to fetch all vehicleMakeId's fr
 This Job is used to fetch all the vehcileIds with makeId's..If u want to test this job just uncomment the below function
 */
 
-
-
 // require('./cron-jobs/allVehicleTypeByMakeIdJobs').runAllVehicleTypesWithMakeIdJobs()
+
+
+
+
 
 
 module.exports = app;
