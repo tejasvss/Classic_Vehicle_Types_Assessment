@@ -5,7 +5,7 @@ const getAllVehicleTypes = async (req, res) => {
 
     try {
 
-        let data = await Vehicle.find({});
+        let data = await Vehicle.find({}).select('-_id')
         return res.status(200).send({ status: 1, message: "Data fetched successfully", data: data })
 
     }
